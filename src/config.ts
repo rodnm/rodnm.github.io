@@ -31,7 +31,7 @@ export const personalInfo = {
         "Me apasiona aprender nuevas tecnologías, construir soluciones reproducibles y conectar la analítica, la automatización y la economía para generar conocimiento útil e impulsar la innovación. Creo en el valor de los datos bien estructurados, la documentación transparente y la creatividad aplicada a la resolución de problemas reales."
     ],
     contact: {
-        email: "rodrigo.norabuena@pucp.edu.pe",
+        email: "rodrigoandres.norabuena@gmail.com",
         github: "https://github.com/rodnm",
         linkedin: "https://linkedin.com/in/rodnm"
     }
