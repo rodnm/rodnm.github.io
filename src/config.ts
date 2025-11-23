@@ -109,7 +109,103 @@ export const projects: Project[] = [
         title: "Portfolio V1",
         description: "Primera versión de mi portafolio personal usando Astro.",
         tags: ["HTML", "Astro", "Tailwind CSS", "TypeScript", "React", "Git", "GitHub"],
-        link: "#",
+        link: "https://github.com/rodnm/portfolio_v1",
         image: "/images/portfolio-v1.png"
     }
 ];
+
+export interface PortfolioData {
+    personalInfo: typeof personalInfo;
+    experiences: Experience[];
+    education: Education[];
+    skills: SkillCategory[];
+    projects: Project[];
+}
+
+export const spanishData: PortfolioData = {
+    personalInfo: personalInfo,
+    experiences: experiences,
+    education: education,
+    skills: skills,
+    projects: projects
+};
+
+export const englishData: PortfolioData = {
+    personalInfo: {
+        ...personalInfo,
+        title: "Economist",
+        description: "Economist transforming data into decisions, processes, and impactful solutions",
+        about: [
+            "Economist oriented towards data science and engineering, with experience in applied research, quantitative analysis, and information systems development. I have designed ETL pipelines, database models, and institutional indicators to strengthen knowledge management and academic productivity.",
+            "I am passionate about learning new technologies, building reproducible solutions, and connecting analytics, automation, and economics to generate useful knowledge and drive innovation. I believe in the value of well-structured data, transparent documentation, and creativity applied to solving real problems."
+        ]
+    },
+    experiences: [
+        {
+            title: "Professional Research Intern",
+            company: "CENTRUM PUCP",
+            period: "2025 - Present",
+            description: "Designed and implemented relational database models to centralize and analyze academic production, integrating data from Scopus and Web of Science.\nDeveloped ETL pipelines in Python for cleaning, standardization, and automated loading into SQL Server, ensuring reliable flows for institutional dashboards in Power BI.\n\nBuilt research productivity indicators aligned with international standards (AACSB, EQUIS, BGA, AMBA) to monitor academic performance.\n\nDesigned and implemented voice assistants with generative AI and language models (LLMs) to automate evaluation processes in postgraduate programs.\n\nCreated reproducible technical documentation with Markdown and Quarto, strengthening traceability, standardization, and knowledge transfer within the team."
+        }
+    ],
+    education: [
+        {
+            degree: "Bachelor in Economics",
+            institution: "Pontifical Catholic University of Peru",
+            period: "2024",
+            description: "Specialization in quantitative methods and applied economics."
+        }
+    ],
+    skills: [
+        {
+            category: "Programming Languages",
+            skills: ["Python", "R", "SQL", "Java", "Matlab", "Stata"]
+        },
+        {
+            category: "Data & Analysis",
+            skills: ["Statistical/Econometric Analysis", "Machine Learning", "Power BI", "Dashboards", "Excel (Macros)"]
+        },
+        {
+            category: "Data Engineering",
+            skills: ["ETL/ELT", "PySpark", "Airflow", "Data Modeling", "SQL Server"]
+        },
+        {
+            category: "Infrastructure & Cloud",
+            skills: ["AWS", "GCP", "Azure"]
+        },
+        {
+            category: "Additional Tools",
+            skills: ["Git", "GitHub", "ArcGIS", "Markdown/Quarto", "Canva"]
+        }
+    ],
+    projects: [
+        {
+            title: "Global Rare Earth Trade Analysis",
+            description: "Dashboard presenting an analysis of global rare earth trade for the period 1995-2022. The source used is data from the Observatory of Economic Complexity (OEC).",
+            tags: ["R", "Power BI"],
+            link: "https://github.com/rodnm/proyect_powebi_rare-earth",
+            image: "/images/rare-earth.png"
+        },
+        {
+            title: "BCRP: Exchange Rate",
+            description: "Web scraping of data found in the BCRP Statistical Series repository. These data are the Dollar Exchange Rate - Sale series for any year.",
+            tags: ["R"],
+            link: "https://github.com/rodnm/bcrp-tasa-de-cambio",
+            image: "/images/exchange-rate.png"
+        },
+        {
+            title: "Rseries",
+            description: "This package contains beauty palettes to personalize plots with the style of series from platforms like Netflix, Amazon Prime, or local TV from Latin American Countries.",
+            tags: ["R", "Git", "GitHub"],
+            link: "https://github.com/diognes/Rseries",
+            image: "/images/rseries.png"
+        },
+        {
+            title: "Portfolio V1",
+            description: "First version of my personal portfolio using Astro.",
+            tags: ["HTML", "Astro", "Tailwind CSS", "TypeScript", "React", "Git", "GitHub"],
+            link: "https://github.com/rodnm/portfolio_v1",
+            image: "/images/portfolio-v1.png"
+        }
+    ]
+};
