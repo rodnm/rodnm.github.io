@@ -85,6 +85,13 @@ export const skills: SkillCategory[] = [
 
 export const projects: Project[] = [
     {
+        title: "OpenAlex Research Dashboard",
+        description: "Una canalización ETL modular y un panel interactivo para analizar datos bibliométricos de OpenAlex. Este proyecto rastrea tendencias de investigación, autores destacados, instituciones y obras influyentes en múltiples campos de estudio (p. ej., inteligencia artificial, economía y física).",
+        tags: ["Python", "Docker", "Streamlit", "Git", "GitHub"],
+        link: "https://github.com/rodnm/openalex-research-dashboard",
+        image: "/images/openalex-research-dashboard.png"
+    },
+    {
         title: "Crypto Monitor",
         description: "Este proyecto es un monitor de criptomonedas en tiempo real que obtiene datos de la API de CoinGecko, los procesa y los visualiza en un panel interactivo de Streamlit.",
         tags: ["Python", "Streamlit"],
@@ -186,6 +193,13 @@ export const englishData: PortfolioData = {
         }
     ],
     projects: [
+        {
+            title: "OpenAlex Research Dashboard",
+            description: "A modular ETL pipeline and interactive dashboard for analyzing bibliometric data from OpenAlex. This project tracks research trends, top authors, institutions, and influential works across multiple fields of study (e.g., Artificial Intelligence, Economics, Physics).",
+            tags: ["Python", "Docker", "Streamlit", "Git", "GitHub"],
+            link: "https://github.com/rodnm/openalex-research-dashboard",
+            image: "/images/openalex-research-dashboard.png"
+        },
         {
             title: "Crypto Monitor",
             description: "This project is a real-time cryptocurrency monitor that fetches data from the CoinGecko API, processes it, and visualizes it in an interactive Streamlit dashboard.",
