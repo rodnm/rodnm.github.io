@@ -87,7 +87,7 @@ export const projects: Project[] = [
     {
         title: "OpenAlex Research Dashboard",
         description: "Una canalización ETL modular y un panel interactivo para analizar datos bibliométricos de OpenAlex. Este proyecto rastrea tendencias de investigación, autores destacados, instituciones y obras influyentes en múltiples campos de estudio (p. ej., inteligencia artificial, economía y física).",
-        tags: ["Python", "Docker", "Streamlit", "Git", "GitHub"],
+        tags: ["Python", "Docker", "Streamlit", "Apache Airflow", "Git", "GitHub"],
         link: "https://github.com/rodnm/openalex-research-dashboard",
         image: "/images/openalex-research-dashboard.png"
     },
@@ -196,7 +196,7 @@ export const englishData: PortfolioData = {
         {
             title: "OpenAlex Research Dashboard",
             description: "A modular ETL pipeline and interactive dashboard for analyzing bibliometric data from OpenAlex. This project tracks research trends, top authors, institutions, and influential works across multiple fields of study (e.g., Artificial Intelligence, Economics, Physics).",
-            tags: ["Python", "Docker", "Streamlit", "Git", "GitHub"],
+            tags: ["Python", "Docker", "Streamlit", "Apache Airflow", "Git", "GitHub"],
             link: "https://github.com/rodnm/openalex-research-dashboard",
             image: "/images/openalex-research-dashboard.png"
         },
