@@ -5,7 +5,8 @@
 
 @theme {
   --color-primary: #440154;
-  --color-secondary: #1a756f; /* Darkened for AA compliance on white (4.5:1+) */
+  --color-secondary: #1a756f;
+  /* Darkened for AA compliance on white (4.5:1+) */
   --color-accent: #fde725;
   --color-background: #ffffff;
   --color-text: #1a1a1a;
@@ -26,6 +27,49 @@
   .dark body {
     @apply bg-[#1a1a1a] text-gray-100;
   }
+
+  /* Accessibility Utilities */
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: revert;
+    margin: revert;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+
+  /* Improved Focus Styles */
+  *:focus-visible {
+    outline: 3px solid var(--color-secondary);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  a:focus-visible {
+    outline-color: var(--color-primary);
+  }
+
+  button:focus-visible {
+    outline-color: var(--color-secondary);
+  }
+
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
 }
 
 /* Dark mode overrides */
@@ -33,5 +77,25 @@
   --color-background: #1a1a1a;
   --color-text: #f3f4f6;
   --color-primary: #fde725;
-  --color-secondary: #4fdbd0; /* Lightened for AA compliance on dark */
+  --color-secondary: #4fdbd0;
+  /* Lightened for AA compliance on dark */
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --color-primary: #000000;
+    --color-secondary: #0000FF;
+    --color-accent: #FFFF00;
+  }
+
+  .dark {
+    --color-primary: #FFFFFF;
+    --color-secondary: #00FFFF;
+    --color-accent: #FFFF00;
+  }
+
+  * {
+    border-width: 2px !important;
+  }
 }

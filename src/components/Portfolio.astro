@@ -56,6 +56,7 @@ const viewProjectText = isEs ? "Ver Proyecto" : "View Project";
         <a
             href={toggleLink}
             class="px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-white font-bold hover:scale-105 transition-transform flex items-center gap-2"
+            aria-label={isEs ? "Switch to English" : "Cambiar a Español"}
         >
             <Languages class="w-4 h-4" />
             {toggleText}
