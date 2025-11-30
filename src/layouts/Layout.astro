@@ -1,22 +1,22 @@
 ---
-import MobileMenu from "../components/MobileMenu";
-import Navigation from "../components/Navigation";
-import ScrollProgress from "../components/ScrollProgress";
-import LanguageDetector from "../components/LanguageDetector";
-import SEO from "../components/SEO.astro";
-import { navigation } from "../config";
-import "../styles/global.css";
+import MobileMenu from '../components/MobileMenu';
+import Navigation from '../components/Navigation';
+import ScrollProgress from '../components/ScrollProgress';
+import LanguageDetector from '../components/LanguageDetector';
+import SEO from '../components/SEO.astro';
+import { navigation } from '../config';
+import '../styles/global.css';
 
 interface Props {
     title: string;
     description?: string;
-    locale?: "es" | "en";
+    locale?: 'es' | 'en';
 }
 
 const {
     title,
-    description = "Portafolio Profesional de Rodrigo Norabuena - Economista y Data Scientist",
-    locale = "es",
+    description = 'Portafolio Profesional de Rodrigo Norabuena - Economista y Data Scientist',
+    locale = 'es',
 } = Astro.props;
 const navItems = navigation[locale];
 ---
@@ -32,40 +32,35 @@ const navItems = navigation[locale];
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
         <!-- Google tag (gtag.js) -->
-        <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-        ></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
         <script is:inline>
             window.dataLayer = window.dataLayer || [];
             function gtag() {
+                // eslint-disable-next-line
                 dataLayer.push(arguments);
             }
-            gtag("js", new Date());
-            gtag("config", "G-XXXXXXXXXX");
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
         </script>
 
         <script is:inline>
             const theme = (() => {
-                if (
-                    typeof localStorage !== "undefined" &&
-                    localStorage.getItem("theme")
-                ) {
-                    return localStorage.getItem("theme");
+                if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+                    return localStorage.getItem('theme');
                 }
-                if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-                    return "dark";
+                if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    return 'dark';
                 }
-                return "light";
+                return 'light';
             })();
 
-            if (theme === "dark") {
-                document.documentElement.classList.add("dark");
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
             } else {
-                document.documentElement.classList.remove("dark");
+                document.documentElement.classList.remove('dark');
             }
 
-            window.localStorage.setItem("theme", theme);
+            window.localStorage.setItem('theme', theme);
         </script>
     </head>
     <body
@@ -83,9 +78,7 @@ const navItems = navigation[locale];
         <header
             class="fixed w-full top-0 z-50 bg-white/80 dark:bg-[#1a1a1a]/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800"
         >
-            <nav
-                class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center"
-            >
+            <nav class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
                 <a
                     href="#"
                     class="text-2xl font-bold text-[var(--color-primary)] dark:text-[var(--color-secondary)]"
@@ -105,12 +98,9 @@ const navItems = navigation[locale];
         </main>
 
         <footer class="bg-gray-50 dark:bg-gray-900 py-8 mt-20">
-            <div
-                class="max-w-6xl mx-auto px-4 text-center text-gray-600 dark:text-gray-400"
-            >
+            <div class="max-w-6xl mx-auto px-4 text-center text-gray-600 dark:text-gray-400">
                 <p>
-                    &copy; {new Date().getFullYear()} Portafolio Profesional. Creado
-                    con Astro y Tailwind.
+                    &copy; {new Date().getFullYear()} Portafolio Profesional. Creado con Astro y Tailwind.
                 </p>
             </div>
         </footer>

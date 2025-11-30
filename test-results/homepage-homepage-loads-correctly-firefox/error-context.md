@@ -1,0 +1,281 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+      - link "Saltar al contenido principal" [ref=e2] [cursor=pointer]:
+            - /url: '#main-content'
+      - banner [ref=e5]:
+            - navigation [ref=e6]:
+                  - link "Portafolio" [ref=e7] [cursor=pointer]:
+                        - /url: '#'
+                  - list [ref=e10]:
+                        - listitem [ref=e11]:
+                              - link "About" [ref=e12] [cursor=pointer]:
+                                    - /url: '#about'
+                        - listitem [ref=e13]:
+                              - link "Experience" [ref=e14] [cursor=pointer]:
+                                    - /url: '#experience'
+                        - listitem [ref=e15]:
+                              - link "Education" [ref=e16] [cursor=pointer]:
+                                    - /url: '#education'
+                        - listitem [ref=e17]:
+                              - link "Skills" [ref=e18] [cursor=pointer]:
+                                    - /url: '#skills'
+                        - listitem [ref=e19]:
+                              - link "Projects" [ref=e20] [cursor=pointer]:
+                                    - /url: '#projects'
+                        - listitem [ref=e21]:
+                              - link "Contact" [ref=e22] [cursor=pointer]:
+                                    - /url: '#contact'
+      - main [ref=e23]:
+            - generic [ref=e24]:
+                  - button "Toggle theme" [ref=e26]:
+                        - img [ref=e27]
+                  - link "Cambiar a Español" [ref=e29] [cursor=pointer]:
+                        - /url: /
+                        - img [ref=e30]
+                        - text: ES
+            - generic [ref=e42]:
+                  - heading "Hi, I'm Rodrigo Norabuena" [level=1] [ref=e43]
+                  - paragraph [ref=e44]: Economist transforming data into decisions, processes, and impactful solutions
+                  - generic [ref=e45]:
+                        - link "Contact Me" [ref=e46] [cursor=pointer]:
+                              - /url: '#contact'
+                        - link "Download CV" [ref=e47] [cursor=pointer]:
+                              - /url: /cv.pdf
+            - generic [ref=e52]:
+                  - heading "About Me" [level=2] [ref=e53]:
+                        - img [ref=e54]
+                        - text: About Me
+                  - generic [ref=e57]:
+                        - img "Rodrigo Norabuena" [ref=e60]
+                        - generic [ref=e61]:
+                              - paragraph [ref=e62]: Economist oriented towards data science and engineering, with experience in applied research, quantitative analysis, and information systems development. I have designed ETL pipelines, database models, and institutional indicators to strengthen knowledge management and academic productivity.
+                              - paragraph [ref=e63]: I am passionate about learning new technologies, building reproducible solutions, and connecting analytics, automation, and economics to generate useful knowledge and drive innovation. I believe in the value of well-structured data, transparent documentation, and creativity applied to solving real problems.
+            - generic [ref=e68]:
+                  - heading "Experience" [level=2] [ref=e69]:
+                        - img [ref=e70]
+                        - text: Experience
+                  - generic [ref=e74]:
+                        - heading "Professional Research Intern" [level=3] [ref=e76]
+                        - text: CENTRUM PUCP | 2025 - Present
+                        - paragraph [ref=e77]: Designed and implemented relational database models to centralize and analyze academic production, integrating data from Scopus and Web of Science. Developed ETL pipelines in Python for cleaning, standardization, and automated loading into SQL Server, ensuring reliable flows for institutional dashboards in Power BI. Built research productivity indicators aligned with international standards (AACSB, EQUIS, BGA, AMBA) to monitor academic performance. Designed and implemented voice assistants with generative AI and language models (LLMs) to automate evaluation processes in postgraduate programs. Created reproducible technical documentation with Markdown and Quarto, strengthening traceability, standardization, and knowledge transfer within the team.
+            - generic [ref=e82]:
+                  - heading "Education" [level=2] [ref=e83]:
+                        - img [ref=e84]
+                        - text: Education
+                  - generic [ref=e89]:
+                        - generic [ref=e90]: '2024'
+                        - generic [ref=e91]:
+                              - heading "Pontifical Catholic University of Peru" [level=3] [ref=e92]
+                              - paragraph [ref=e93]: Bachelor in Economics
+                              - paragraph [ref=e94]: Specialization in quantitative methods and applied economics.
+            - generic [ref=e99]:
+                  - heading "Technical Skills" [level=2] [ref=e100]:
+                        - img [ref=e101]
+                        - text: Technical Skills
+                  - generic [ref=e116]:
+                        - generic [ref=e117]:
+                              - heading "Programming Languages" [level=3] [ref=e118]
+                              - generic [ref=e119]:
+                                    - generic [ref=e120]: Python
+                                    - generic [ref=e121]: R
+                                    - generic [ref=e122]: SQL
+                                    - generic [ref=e123]: Java
+                                    - generic [ref=e124]: Matlab
+                                    - generic [ref=e125]: Stata
+                        - generic [ref=e126]:
+                              - heading "Data & Analysis" [level=3] [ref=e127]
+                              - generic [ref=e128]:
+                                    - generic [ref=e129]: Statistical/Econometric Analysis
+                                    - generic [ref=e130]: Machine Learning
+                                    - generic [ref=e131]: Power BI
+                                    - generic [ref=e132]: Dashboards
+                                    - generic [ref=e133]: Excel (Macros)
+                        - generic [ref=e134]:
+                              - heading "Data Engineering" [level=3] [ref=e135]
+                              - generic [ref=e136]:
+                                    - generic [ref=e137]: ETL/ELT
+                                    - generic [ref=e138]: PySpark
+                                    - generic [ref=e139]: Airflow
+                                    - generic [ref=e140]: Data Modeling
+                                    - generic [ref=e141]: SQL Server
+                        - generic [ref=e142]:
+                              - heading "Infrastructure & Cloud" [level=3] [ref=e143]
+                              - generic [ref=e144]:
+                                    - generic [ref=e145]: AWS
+                                    - generic [ref=e146]: GCP
+                                    - generic [ref=e147]: Azure
+                        - generic [ref=e148]:
+                              - heading "Additional Tools" [level=3] [ref=e149]
+                              - generic [ref=e150]:
+                                    - generic [ref=e151]: Git
+                                    - generic [ref=e152]: GitHub
+                                    - generic [ref=e153]: ArcGIS
+                                    - generic [ref=e154]: Markdown/Quarto
+                                    - generic [ref=e155]: Canva
+            - generic [ref=e160]:
+                  - heading "Projects" [level=2] [ref=e161]:
+                        - img [ref=e162]
+                        - text: Projects
+                  - generic [ref=e167]:
+                        - generic [ref=e168]:
+                              - button "All" [ref=e169]
+                              - button "Python" [ref=e170]
+                              - button "Docker" [ref=e171]
+                              - button "Streamlit" [ref=e172]
+                              - button "Apache Airflow" [ref=e173]
+                              - button "Git" [ref=e174]
+                              - button "GitHub" [ref=e175]
+                              - button "R" [ref=e176]
+                              - button "Power BI" [ref=e177]
+                              - button "HTML" [ref=e178]
+                              - button "Astro" [ref=e179]
+                              - button "Tailwind CSS" [ref=e180]
+                              - button "TypeScript" [ref=e181]
+                              - button "React" [ref=e182]
+                        - generic [ref=e183]:
+                              - generic [ref=e184]:
+                                    - link "OpenAlex Research Dashboard" [ref=e185] [cursor=pointer]:
+                                          - /url: https://github.com/rodnm/openalex-research-dashboard
+                                          - img "OpenAlex Research Dashboard" [ref=e186]
+                                          - img [ref=e188]
+                                    - generic [ref=e192]:
+                                          - heading "OpenAlex Research Dashboard" [level=3] [ref=e193]
+                                          - paragraph [ref=e194]: A modular ETL pipeline and interactive dashboard for analyzing bibliometric data from OpenAlex. This project tracks research trends, top authors, institutions, and influential works across multiple fields of study (e.g., Artificial Intelligence, Economics, Physics).
+                                          - generic [ref=e195]:
+                                                - generic [ref=e196]: Python
+                                                - generic [ref=e197]: Docker
+                                                - generic [ref=e198]: Streamlit
+                                                - generic [ref=e199]: Apache Airflow
+                                                - generic [ref=e200]: Git
+                                                - generic [ref=e201]: GitHub
+                                          - link "View Project" [ref=e202] [cursor=pointer]:
+                                                - /url: https://github.com/rodnm/openalex-research-dashboard
+                                                - text: View Project
+                                                - img [ref=e203]
+                              - generic [ref=e207]:
+                                    - link "Crypto Monitor" [ref=e208] [cursor=pointer]:
+                                          - /url: https://github.com/rodnm/crypto-monitor
+                                          - img "Crypto Monitor" [ref=e209]
+                                          - img [ref=e211]
+                                    - generic [ref=e215]:
+                                          - heading "Crypto Monitor" [level=3] [ref=e216]
+                                          - paragraph [ref=e217]: This project is a real-time cryptocurrency monitor that fetches data from the CoinGecko API, processes it, and visualizes it in an interactive Streamlit dashboard.
+                                          - generic [ref=e218]:
+                                                - generic [ref=e219]: Python
+                                                - generic [ref=e220]: Streamlit
+                                          - link "View Project" [ref=e221] [cursor=pointer]:
+                                                - /url: https://github.com/rodnm/crypto-monitor
+                                                - text: View Project
+                                                - img [ref=e222]
+                              - generic [ref=e226]:
+                                    - link "Global Rare Earth Trade Analysis" [ref=e227] [cursor=pointer]:
+                                          - /url: https://github.com/rodnm/proyect_powebi_rare-earth
+                                          - img "Global Rare Earth Trade Analysis" [ref=e228]
+                                          - img [ref=e230]
+                                    - generic [ref=e234]:
+                                          - heading "Global Rare Earth Trade Analysis" [level=3] [ref=e235]
+                                          - paragraph [ref=e236]: Dashboard presenting an analysis of global rare earth trade for the period 1995-2022. The source used is data from the Observatory of Economic Complexity (OEC).
+                                          - generic [ref=e237]:
+                                                - generic [ref=e238]: R
+                                                - generic [ref=e239]: Power BI
+                                          - link "View Project" [ref=e240] [cursor=pointer]:
+                                                - /url: https://github.com/rodnm/proyect_powebi_rare-earth
+                                                - text: View Project
+                                                - img [ref=e241]
+                              - generic [ref=e245]:
+                                    - 'link "BCRP: Exchange Rate" [ref=e246] [cursor=pointer]':
+                                          - /url: https://github.com/rodnm/bcrp-tasa-de-cambio
+                                          - 'img "BCRP: Exchange Rate" [ref=e247]'
+                                          - img [ref=e249]
+                                    - generic [ref=e253]:
+                                          - 'heading "BCRP: Exchange Rate" [level=3] [ref=e254]'
+                                          - paragraph [ref=e255]: Web scraping of data found in the BCRP Statistical Series repository. These data are the Dollar Exchange Rate - Sale series for any year.
+                                          - generic [ref=e257]: R
+                                          - link "View Project" [ref=e258] [cursor=pointer]:
+                                                - /url: https://github.com/rodnm/bcrp-tasa-de-cambio
+                                                - text: View Project
+                                                - img [ref=e259]
+                              - generic [ref=e263]:
+                                    - link "Rseries" [ref=e264] [cursor=pointer]:
+                                          - /url: https://github.com/diognes/Rseries
+                                          - img "Rseries" [ref=e265]
+                                          - img [ref=e267]
+                                    - generic [ref=e271]:
+                                          - heading "Rseries" [level=3] [ref=e272]
+                                          - paragraph [ref=e273]: This package contains beauty palettes to personalize plots with the style of series from platforms like Netflix, Amazon Prime, or local TV from Latin American Countries.
+                                          - generic [ref=e274]:
+                                                - generic [ref=e275]: R
+                                                - generic [ref=e276]: Git
+                                                - generic [ref=e277]: GitHub
+                                          - link "View Project" [ref=e278] [cursor=pointer]:
+                                                - /url: https://github.com/diognes/Rseries
+                                                - text: View Project
+                                                - img [ref=e279]
+                              - generic [ref=e283]:
+                                    - link "Portfolio V1" [ref=e284] [cursor=pointer]:
+                                          - /url: https://github.com/rodnm/portfolio_v1
+                                          - img "Portfolio V1" [ref=e285]
+                                          - img [ref=e287]
+                                    - generic [ref=e291]:
+                                          - heading "Portfolio V1" [level=3] [ref=e292]
+                                          - paragraph [ref=e293]: First version of my personal portfolio using Astro.
+                                          - generic [ref=e294]:
+                                                - generic [ref=e295]: HTML
+                                                - generic [ref=e296]: Astro
+                                                - generic [ref=e297]: Tailwind CSS
+                                                - generic [ref=e298]: TypeScript
+                                                - generic [ref=e299]: React
+                                                - generic [ref=e300]: Git
+                                                - generic [ref=e301]: GitHub
+                                          - link "View Project" [ref=e302] [cursor=pointer]:
+                                                - /url: https://github.com/rodnm/portfolio_v1
+                                                - text: View Project
+                                                - img [ref=e303]
+            - generic [ref=e311]:
+                  - heading "Contact" [level=2] [ref=e312]:
+                        - img [ref=e313]
+                        - text: Contact
+                  - paragraph [ref=e316]: Have a project in mind or just want to say hi? Send me a message!
+                  - generic [ref=e318]:
+                        - generic [ref=e319]:
+                              - generic [ref=e320]: Name
+                              - textbox "Name" [ref=e321]
+                        - generic [ref=e322]:
+                              - generic [ref=e323]: Email
+                              - textbox "Email" [ref=e324]
+                        - generic [ref=e325]:
+                              - generic [ref=e326]: Message
+                              - textbox "Message" [ref=e327]
+                        - button "Send Message" [ref=e328]:
+                              - text: Send Message
+                              - img [ref=e329]
+                  - generic [ref=e332]:
+                        - link "GitHub profile" [ref=e333] [cursor=pointer]:
+                              - /url: https://github.com/rodnm
+                              - img [ref=e334]
+                        - link "LinkedIn profile" [ref=e337] [cursor=pointer]:
+                              - /url: https://linkedin.com/in/rodnm
+                              - img [ref=e338]
+                        - link "Email contact" [ref=e342] [cursor=pointer]:
+                              - /url: mailto:rodrigoandres.norabuena@gmail.com
+                              - img [ref=e343]
+      - contentinfo [ref=e346]:
+            - paragraph [ref=e348]: © 2025 Portafolio Profesional. Creado con Astro y Tailwind.
+      - generic [ref=e351]:
+            - button "Menu" [ref=e352]:
+                  - img [ref=e354]
+                  - generic: Menu
+            - button "Inspect" [ref=e358]:
+                  - img [ref=e360]
+                  - generic: Inspect
+            - button "Audit" [ref=e362]:
+                  - generic [ref=e363]:
+                        - img [ref=e364]
+                        - img [ref=e367]
+                  - generic: Audit
+            - button "Settings" [ref=e370]:
+                  - img [ref=e372]
+                  - generic: Settings
+```

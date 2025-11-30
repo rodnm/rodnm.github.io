@@ -11,10 +11,10 @@ interface Props {
         sending: string;
         success: string;
         error: string;
-    }
+    };
 }
 
-export default function ContactForm({ formId = "YOUR_FORM_ID", labels }: Props) {
+export default function ContactForm({ formId = 'YOUR_FORM_ID', labels }: Props) {
     const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -29,8 +29,8 @@ export default function ContactForm({ formId = "YOUR_FORM_ID", labels }: Props) 
                 method: 'POST',
                 body: formData,
                 headers: {
-                    'Accept': 'application/json'
-                }
+                    Accept: 'application/json',
+                },
             });
 
             if (response.ok) {
@@ -39,7 +39,7 @@ export default function ContactForm({ formId = "YOUR_FORM_ID", labels }: Props) 
             } else {
                 setStatus('error');
             }
-        } catch (error) {
+        } catch {
             setStatus('error');
         }
     };
@@ -47,7 +47,10 @@ export default function ContactForm({ formId = "YOUR_FORM_ID", labels }: Props) 
     return (
         <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
             <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+                <label
+                    htmlFor="name"
+                    className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300"
+                >
                     {labels.name}
                 </label>
                 <input
@@ -60,7 +63,10 @@ export default function ContactForm({ formId = "YOUR_FORM_ID", labels }: Props) 
             </div>
 
             <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+                <label
+                    htmlFor="email"
+                    className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300"
+                >
                     {labels.email}
                 </label>
                 <input
@@ -73,7 +79,10 @@ export default function ContactForm({ formId = "YOUR_FORM_ID", labels }: Props) 
             </div>
 
             <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300">
+                <label
+                    htmlFor="message"
+                    className="block text-sm font-medium mb-2 text-gray-700 dark:text-gray-300"
+                >
                     {labels.message}
                 </label>
                 <textarea
