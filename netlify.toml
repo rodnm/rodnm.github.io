@@ -1,0 +1,16 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+# Configuración para evitar builds innecesarios
+# Netlify busca automáticamente cambios, pero puedes forzar la cancelación del build
+# agregando "[skip ci]" al mensaje de tu commit.
+
+[context.deploy-preview]
+  command = "npm run build"
+
+[context.production]
+  command = "npm run build"
