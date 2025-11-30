@@ -1,5 +1,10 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import ThemeToggle from "./ThemeToggle";
+import ScrollToTop from "./ScrollToTop";
+import ScrollReveal from "./ScrollReveal";
+import ParallaxBackground from "./ParallaxBackground";
+import { Image } from "astro:assets";
 import {
     Briefcase,
     Code,
@@ -38,301 +43,326 @@ const contactDesc = isEs
 const viewProjectText = isEs ? "Ver Proyecto" : "View Project";
 ---
 
-<Layout title={`Portafolio de ${personalInfo.name}`}>
-    <!-- Language Toggle (Fixed) -->
-    <a
-        href={toggleLink}
-        class="fixed top-4 right-4 z-50 px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-white font-bold hover:scale-105 transition-transform flex items-center gap-2"
-    >
-        <Languages class="w-4 h-4" />
-        {toggleText}
-    </a>
+<Layout
+    title={`Portafolio de ${personalInfo.name}`}
+    description={personalInfo.description}
+    locale={currentLocale}
+>
+    <!-- Language & Theme Toggle (Fixed) -->
+    <div class="fixed top-4 right-4 z-50 flex items-center gap-3">
+        <ThemeToggle client:load />
+        <a
+            href={toggleLink}
+            class="px-4 py-2 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full shadow-lg border border-gray-200 dark:border-gray-700 text-gray-800 dark:text-white font-bold hover:scale-105 transition-transform flex items-center gap-2"
+        >
+            <Languages class="w-4 h-4" />
+            {toggleText}
+        </a>
+    </div>
 
     <!-- Hero Section -->
-    <section
-        class="min-h-[90vh] flex items-center justify-center px-4 relative overflow-hidden"
-    >
-        <div class="absolute inset-0 -z-10 opacity-10 dark:opacity-20">
-            <div
-                class="absolute top-20 left-20 w-72 h-72 bg-[var(--color-primary)] rounded-full blur-3xl"
-            >
-            </div>
-            <div
-                class="absolute bottom-20 right-20 w-96 h-96 bg-[var(--color-secondary)] rounded-full blur-3xl"
-            >
-            </div>
-        </div>
+    <ScrollReveal client:load animation="fade" duration={1000}>
+        <section
+            class="min-h-[90vh] flex items-center justify-center px-4 relative overflow-hidden"
+        >
+            <ParallaxBackground client:load />
 
-        <div class="max-w-4xl mx-auto text-center">
-            <h1
-                class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] dark:from-[var(--color-accent)] dark:to-[var(--color-secondary)]"
-            >
-                {isEs ? "Hola, soy" : "Hi, I'm"}
-                {personalInfo.name}
-            </h1>
-            <p
-                class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto"
-            >
-                {personalInfo.description}
-            </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a
-                    href="#contact"
-                    class="px-8 py-3 bg-[var(--color-primary)] text-white rounded-lg hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl dark:bg-[var(--color-accent)] dark:text-gray-900 font-semibold"
+            <div class="max-w-4xl mx-auto text-center">
+                <h1
+                    class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] dark:from-[var(--color-accent)] dark:to-[var(--color-secondary)]"
                 >
-                    {contactText}
-                </a>
-                <a
-                    href={personalInfo.cv}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="px-8 py-3 border-2 border-[var(--color-primary)] text-[var(--color-primary)] rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all dark:border-[var(--color-accent)] dark:text-[var(--color-accent)] dark:hover:bg-[var(--color-accent)] dark:hover:text-gray-900 font-semibold"
+                    {isEs ? "Hola, soy" : "Hi, I'm"}
+                    {personalInfo.name}
+                </h1>
+                <p
+                    class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto"
                 >
-                    {cvText}
-                </a>
+                    {personalInfo.description}
+                </p>
+                <div class="flex flex-col md:flex-row gap-4 justify-center">
+                    <a
+                        href="#contact"
+                        class="px-8 py-3 bg-[var(--color-primary)] text-white rounded-lg hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl dark:bg-[var(--color-accent)] dark:text-gray-900 font-semibold"
+                    >
+                        {contactText}
+                    </a>
+                    <a
+                        href={personalInfo.cv}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="px-8 py-3 border-2 border-[var(--color-primary)] text-[var(--color-primary)] rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all dark:border-[var(--color-accent)] dark:text-[var(--color-accent)] dark:hover:bg-[var(--color-accent)] dark:hover:text-gray-900 font-semibold"
+                    >
+                        {cvText}
+                    </a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </ScrollReveal>
 
     <!-- About Section -->
-    <section id="about" class="py-20 px-4 bg-gray-50 dark:bg-white/5">
-        <div class="max-w-4xl mx-auto">
-            <h2
-                class="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
-            >
-                <Code className="w-8 h-8 text-[var(--color-secondary)]" />
-                {aboutTitle}
-            </h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div
-                    class="aspect-square rounded-full overflow-hidden bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] p-1"
+    <ScrollReveal client:load animation="slide-up">
+        <section id="about" class="py-20 px-4 bg-gray-50 dark:bg-white/5">
+            <div class="max-w-4xl mx-auto">
+                <h2
+                    class="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
                 >
+                    <Code className="w-8 h-8 text-[var(--color-secondary)]" />
+                    {aboutTitle}
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div
-                        class="w-full h-full bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center overflow-hidden"
+                        class="aspect-square rounded-full overflow-hidden bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] p-1"
                     >
-                        <img
-                            src={personalInfo.profileImage}
-                            alt={personalInfo.name}
-                            class="w-full h-full object-cover"
-                        />
+                        <div
+                            class="w-full h-full bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center overflow-hidden"
+                        >
+                            <Image
+                                src={personalInfo.profileImage}
+                                alt={personalInfo.name}
+                                class="w-full h-full object-cover"
+                                width={400}
+                                height={400}
+                                loading="eager"
+                            />
+                        </div>
+                    </div>
+                    <div>
+                        {
+                            personalInfo.about.map((paragraph) => (
+                                <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
+                                    {paragraph}
+                                </p>
+                            ))
+                        }
                     </div>
                 </div>
-                <div>
+            </div>
+        </section>
+    </ScrollReveal>
+
+    <!-- Experience Section -->
+    <ScrollReveal client:load animation="slide-up">
+        <section id="experience" class="py-20 px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2
+                    class="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
+                >
+                    <Briefcase
+                        className="w-8 h-8 text-[var(--color-secondary)]"
+                    />
+                    {experienceTitle}
+                </h2>
+                <div class="space-y-8">
                     {
-                        personalInfo.about.map((paragraph) => (
-                            <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">
-                                {paragraph}
-                            </p>
+                        experiences.map((exp) => (
+                            <div class="relative pl-8 border-l-2 border-[var(--color-secondary)]">
+                                <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[var(--color-secondary)]" />
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                                    {exp.title}
+                                </h3>
+                                <span class="text-[var(--color-primary)] dark:text-[var(--color-accent)] font-medium">
+                                    {exp.company} | {exp.period}
+                                </span>
+                                <p class="mt-2 text-gray-600 dark:text-gray-300">
+                                    {exp.description}
+                                </p>
+                            </div>
                         ))
                     }
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2
-                class="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
-            >
-                <Briefcase className="w-8 h-8 text-[var(--color-secondary)]" />
-                {experienceTitle}
-            </h2>
-            <div class="space-y-8">
-                {
-                    experiences.map((exp) => (
-                        <div class="relative pl-8 border-l-2 border-[var(--color-secondary)]">
-                            <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[var(--color-secondary)]" />
-                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-                                {exp.title}
-                            </h3>
-                            <span class="text-[var(--color-primary)] dark:text-[var(--color-accent)] font-medium">
-                                {exp.company} | {exp.period}
-                            </span>
-                            <p class="mt-2 text-gray-600 dark:text-gray-300">
-                                {exp.description}
-                            </p>
-                        </div>
-                    ))
-                }
-            </div>
-        </div>
-    </section>
+        </section>
+    </ScrollReveal>
 
     <!-- Education Section -->
-    <section id="education" class="py-20 px-4 bg-gray-50 dark:bg-white/5">
-        <div class="max-w-4xl mx-auto">
-            <h2
-                class="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
-            >
-                <GraduationCap
-                    className="w-8 h-8 text-[var(--color-secondary)]"
-                />
-                {educationTitle}
-            </h2>
-            <div class="space-y-8">
-                {
-                    education.map((edu) => (
-                        <div class="flex flex-col md:flex-row gap-4 md:gap-8 items-start">
-                            <div class="md:w-1/4">
-                                <span class="text-[var(--color-primary)] dark:text-[var(--color-accent)] font-bold">
-                                    {edu.period}
-                                </span>
-                            </div>
-                            <div class="md:w-3/4">
-                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
-                                    {edu.institution}
-                                </h3>
-                                <p class="text-lg text-gray-700 dark:text-gray-200">
-                                    {edu.degree}
-                                </p>
-                                {edu.description && (
-                                    <p class="mt-2 text-gray-600 dark:text-gray-300">
-                                        {edu.description}
+    <ScrollReveal client:load animation="slide-up">
+        <section id="education" class="py-20 px-4 bg-gray-50 dark:bg-white/5">
+            <div class="max-w-4xl mx-auto">
+                <h2
+                    class="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
+                >
+                    <GraduationCap
+                        className="w-8 h-8 text-[var(--color-secondary)]"
+                    />
+                    {educationTitle}
+                </h2>
+                <div class="space-y-8">
+                    {
+                        education.map((edu) => (
+                            <div class="flex flex-col md:flex-row gap-4 md:gap-8 items-start">
+                                <div class="md:w-1/4">
+                                    <span class="text-[var(--color-primary)] dark:text-[var(--color-accent)] font-bold">
+                                        {edu.period}
+                                    </span>
+                                </div>
+                                <div class="md:w-3/4">
+                                    <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                                        {edu.institution}
+                                    </h3>
+                                    <p class="text-lg text-gray-700 dark:text-gray-200">
+                                        {edu.degree}
                                     </p>
-                                )}
+                                    {edu.description && (
+                                        <p class="mt-2 text-gray-600 dark:text-gray-300">
+                                            {edu.description}
+                                        </p>
+                                    )}
+                                </div>
                             </div>
-                        </div>
-                    ))
-                }
+                        ))
+                    }
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </ScrollReveal>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 px-4">
-        <div class="max-w-4xl mx-auto">
-            <h2
-                class="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
-            >
-                <Cpu className="w-8 h-8 text-[var(--color-secondary)]" />
-                {skillsTitle}
-            </h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                {
-                    skills.map((category) => (
-                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700">
-                            <h3 class="text-xl font-bold mb-4 text-[var(--color-primary)] dark:text-[var(--color-accent)]">
-                                {category.category}
-                            </h3>
-                            <div class="flex flex-wrap gap-2">
-                                {category.skills.map((skill) => (
-                                    <span class="px-3 py-1 text-sm rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
-                                        {skill}
-                                    </span>
-                                ))}
-                            </div>
-                        </div>
-                    ))
-                }
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-20 px-4 bg-gray-50 dark:bg-white/5">
-        <div class="max-w-6xl mx-auto">
-            <h2
-                class="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
-            >
-                <ExternalLink
-                    className="w-8 h-8 text-[var(--color-secondary)]"
-                />
-                {projectsTitle}
-            </h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {
-                    projects.map((project) => (
-                        <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full">
-                            <a
-                                href={project.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                class="h-48 overflow-hidden relative group block"
-                            >
-                                <img
-                                    src={project.image}
-                                    alt={project.title}
-                                    class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                />
-                                <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                    <ExternalLink className="text-white w-8 h-8" />
-                                </div>
-                            </a>
-                            <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">
-                                    {project.title}
+    <ScrollReveal client:load animation="slide-up">
+        <section id="skills" class="py-20 px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2
+                    class="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
+                >
+                    <Cpu className="w-8 h-8 text-[var(--color-secondary)]" />
+                    {skillsTitle}
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    {
+                        skills.map((category) => (
+                            <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700">
+                                <h3 class="text-xl font-bold mb-4 text-[var(--color-primary)] dark:text-[var(--color-accent)]">
+                                    {category.category}
                                 </h3>
-                                <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm flex-grow">
-                                    {project.description}
-                                </p>
-                                <div class="flex flex-wrap gap-2 mb-4">
-                                    {project.tags.map((tag) => (
-                                        <span class="px-3 py-1 text-xs rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] dark:bg-[var(--color-accent)]/10 dark:text-[var(--color-accent)]">
-                                            {tag}
+                                <div class="flex flex-wrap gap-2">
+                                    {category.skills.map((skill) => (
+                                        <span class="px-3 py-1 text-sm rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                                            {skill}
                                         </span>
                                     ))}
                                 </div>
+                            </div>
+                        ))
+                    }
+                </div>
+            </div>
+        </section>
+    </ScrollReveal>
+
+    <!-- Projects Section -->
+    <ScrollReveal client:load animation="slide-up">
+        <section id="projects" class="py-20 px-4 bg-gray-50 dark:bg-white/5">
+            <div class="max-w-6xl mx-auto">
+                <h2
+                    class="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
+                >
+                    <ExternalLink
+                        className="w-8 h-8 text-[var(--color-secondary)]"
+                    />
+                    {projectsTitle}
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {
+                        projects.map((project) => (
+                            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:transform hover:scale-105 transition-all duration-300 border border-gray-100 dark:border-gray-700 flex flex-col h-full">
                                 <a
                                     href={project.link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    class="inline-flex items-center text-[var(--color-secondary)] hover:underline mt-auto"
+                                    class="h-48 overflow-hidden relative group block"
                                 >
-                                    {viewProjectText}{" "}
-                                    <ExternalLink className="w-4 h-4 ml-1" />
+                                    <Image
+                                        src={project.image}
+                                        alt={project.title}
+                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        width={600}
+                                        height={400}
+                                    />
+                                    <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                        <ExternalLink className="text-white w-8 h-8" />
+                                    </div>
                                 </a>
+                                <div class="p-6 flex flex-col flex-grow">
+                                    <h3 class="text-xl font-bold mb-2 text-gray-900 dark:text-white">
+                                        {project.title}
+                                    </h3>
+                                    <p class="text-gray-600 dark:text-gray-300 mb-4 text-sm flex-grow">
+                                        {project.description}
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        {project.tags.map((tag) => (
+                                            <span class="px-3 py-1 text-xs rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] dark:bg-[var(--color-accent)]/10 dark:text-[var(--color-accent)]">
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="inline-flex items-center text-[var(--color-secondary)] hover:underline mt-auto"
+                                    >
+                                        {viewProjectText}{" "}
+                                        <ExternalLink className="w-4 h-4 ml-1" />
+                                    </a>
+                                </div>
                             </div>
-                        </div>
-                    ))
-                }
+                        ))
+                    }
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </ScrollReveal>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2
-                class="text-3xl md:text-4xl font-bold mb-12 flex items-center justify-center gap-3"
-            >
-                <Mail className="w-8 h-8 text-[var(--color-secondary)]" />
-                {contactTitle}
-            </h2>
-            <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                {contactDesc}
-            </p>
-            <div class="flex justify-center gap-6 mb-12">
-                <a
-                    href={personalInfo.contact.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-[var(--color-primary)] hover:text-white dark:hover:bg-[var(--color-accent)] dark:hover:text-gray-900 transition-colors"
+    <ScrollReveal client:load animation="fade">
+        <section id="contact" class="py-20 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2
+                    class="text-3xl md:text-4xl font-bold mb-12 flex items-center justify-center gap-3"
                 >
-                    <Github className="w-6 h-6" />
-                </a>
-                <a
-                    href={personalInfo.contact.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-[#0077b5] hover:text-white transition-colors"
-                >
-                    <Linkedin className="w-6 h-6" />
-                </a>
+                    <Mail className="w-8 h-8 text-[var(--color-secondary)]" />
+                    {contactTitle}
+                </h2>
+                <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+                    {contactDesc}
+                </p>
+                <div class="flex justify-center gap-6 mb-12">
+                    <a
+                        href={personalInfo.contact.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-[var(--color-primary)] hover:text-white dark:hover:bg-[var(--color-accent)] dark:hover:text-gray-900 transition-colors"
+                        aria-label="GitHub profile"
+                    >
+                        <Github className="w-6 h-6" />
+                    </a>
+                    <a
+                        href={personalInfo.contact.linkedin}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-[#0077b5] hover:text-white transition-colors"
+                        aria-label="LinkedIn profile"
+                    >
+                        <Linkedin className="w-6 h-6" />
+                    </a>
+                    <a
+                        href={`mailto:${personalInfo.contact.email}`}
+                        class="p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-[var(--color-secondary)] hover:text-white transition-colors"
+                        aria-label="Email contact"
+                    >
+                        <Mail className="w-6 h-6" />
+                    </a>
+                </div>
                 <a
                     href={`mailto:${personalInfo.contact.email}`}
-                    class="p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-[var(--color-secondary)] hover:text-white transition-colors"
+                    class="text-2xl font-bold text-[var(--color-primary)] dark:text-[var(--color-accent)] hover:underline"
                 >
-                    <Mail className="w-6 h-6" />
+                    {personalInfo.contact.email}
                 </a>
             </div>
-            <a
-                href={`mailto:${personalInfo.contact.email}`}
-                class="text-2xl font-bold text-[var(--color-primary)] dark:text-[var(--color-accent)] hover:underline"
-            >
-                {personalInfo.contact.email}
-            </a>
-        </div>
-    </section>
+        </section>
+    </ScrollReveal>
+
+    <!-- Scroll to Top Button -->
+    <ScrollToTop client:load />
 </Layout>

@@ -5,7 +5,7 @@
 
 @theme {
   --color-primary: #440154;
-  --color-secondary: #21918c;
+  --color-secondary: #1a756f; /* Darkened for AA compliance on white (4.5:1+) */
   --color-accent: #fde725;
   --color-background: #ffffff;
   --color-text: #1a1a1a;
@@ -33,5 +33,5 @@
   --color-background: #1a1a1a;
   --color-text: #f3f4f6;
   --color-primary: #fde725;
-  /* In dark mode, maybe swap or adjust? Let's keep palette but use wisely */
+  --color-secondary: #4fdbd0; /* Lightened for AA compliance on dark */
 }

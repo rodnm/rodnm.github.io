@@ -1,3 +1,12 @@
+import type { ImageMetadata } from 'astro';
+import profileImg from './assets/images/profile.png';
+import openalexImg from './assets/images/openalex-research-dashboard.png';
+import cryptoImg from './assets/images/crypto-monitor.png';
+import rareEarthImg from './assets/images/rare-earth.png';
+import exchangeRateImg from './assets/images/exchange-rate.png';
+import rseriesImg from './assets/images/rseries.png';
+import portfolioImg from './assets/images/portfolio-v1.png';
+
 export interface Experience {
     title: string;
     company: string;
@@ -17,14 +26,33 @@ export interface Project {
     description: string;
     tags: string[];
     link: string;
-    image: string;
+    image: ImageMetadata;
 }
 
+export const navigation = {
+    es: [
+        { label: 'Sobre mí', href: '#about' },
+        { label: 'Experiencia', href: '#experience' },
+        { label: 'Educación', href: '#education' },
+        { label: 'Habilidades', href: '#skills' },
+        { label: 'Proyectos', href: '#projects' },
+        { label: 'Contacto', href: '#contact' }
+    ],
+    en: [
+        { label: 'About', href: '#about' },
+        { label: 'Experience', href: '#experience' },
+        { label: 'Education', href: '#education' },
+        { label: 'Skills', href: '#skills' },
+        { label: 'Projects', href: '#projects' },
+        { label: 'Contact', href: '#contact' }
+    ]
+};
+
 export const personalInfo = {
-    name: "Rodrigo Andres Norabuena Mascaraqui",
+    name: "Rodrigo Norabuena",
     title: "Economista",
     description: "Economista que transforma datos en decisiones, procesos y soluciones con impacto",
-    profileImage: "/images/profile.png",
+    profileImage: profileImg,
     cv: "/cv.pdf",
     about: [
         "Economista orientado a la ciencia e ingeniería de datos, con experiencia en investigación aplicada, análisis cuantitativo y desarrollo de sistemas de información. He diseñado pipelines ETL, modelos de bases de datos e indicadores institucionales para fortalecer la gestión del conocimiento y la productividad académica.",
@@ -89,42 +117,42 @@ export const projects: Project[] = [
         description: "Una canalización ETL modular y un panel interactivo para analizar datos bibliométricos de OpenAlex. Este proyecto rastrea tendencias de investigación, autores destacados, instituciones y obras influyentes en múltiples campos de estudio (p. ej., inteligencia artificial, economía y física).",
         tags: ["Python", "Docker", "Streamlit", "Apache Airflow", "Git", "GitHub"],
         link: "https://github.com/rodnm/openalex-research-dashboard",
-        image: "/images/openalex-research-dashboard.png"
+        image: openalexImg
     },
     {
         title: "Crypto Monitor",
         description: "Este proyecto es un monitor de criptomonedas en tiempo real que obtiene datos de la API de CoinGecko, los procesa y los visualiza en un panel interactivo de Streamlit.",
         tags: ["Python", "Streamlit"],
         link: "https://github.com/rodnm/crypto-monitor",
-        image: "/images/crypto-monitor.png"
+        image: cryptoImg
     },
     {
         title: "Análisis de comercio mundial de tierras raras",
         description: "Dashboard que presenta un análisis del comercio mundial de tierras raras para el periodo 1995-2022. La fuente empleada son los datos de Observatory of Economic Complexity (OEC).",
         tags: ["R", "Power BI"],
         link: "https://github.com/rodnm/proyect_powebi_rare-earth",
-        image: "/images/rare-earth.png"
+        image: rareEarthImg
     },
     {
         title: "BCRP: Tasa de cambio",
         description: "Web scrapping de datos que se encuentran en el repositorio de Series Estadísticas del BCRP. Estos datos son las series de la Tasa de cambio del dólar - Venta para cualquier año.",
         tags: ["R"],
         link: "https://github.com/rodnm/bcrp-tasa-de-cambio",
-        image: "/images/exchange-rate.png"
+        image: exchangeRateImg
     },
     {
         title: "Rseries",
         description: "Este paquete contiene paletas de belleza para personalizar tramas con el estilo de series de plataformas como Netflix, Amazon Prime o TV local de países de Latinoamérica.",
         tags: ["R", "Git", "GitHub"],
         link: "https://github.com/diognes/Rseries",
-        image: "/images/rseries.png"
+        image: rseriesImg
     },
     {
         title: "Portfolio V1",
         description: "Primera versión de mi portafolio personal usando Astro.",
         tags: ["HTML", "Astro", "Tailwind CSS", "TypeScript", "React", "Git", "GitHub"],
         link: "https://github.com/rodnm/portfolio_v1",
-        image: "/images/portfolio-v1.png"
+        image: portfolioImg
     }
 ];
 
@@ -198,42 +226,42 @@ export const englishData: PortfolioData = {
             description: "A modular ETL pipeline and interactive dashboard for analyzing bibliometric data from OpenAlex. This project tracks research trends, top authors, institutions, and influential works across multiple fields of study (e.g., Artificial Intelligence, Economics, Physics).",
             tags: ["Python", "Docker", "Streamlit", "Apache Airflow", "Git", "GitHub"],
             link: "https://github.com/rodnm/openalex-research-dashboard",
-            image: "/images/openalex-research-dashboard.png"
+            image: openalexImg
         },
         {
             title: "Crypto Monitor",
             description: "This project is a real-time cryptocurrency monitor that fetches data from the CoinGecko API, processes it, and visualizes it in an interactive Streamlit dashboard.",
             tags: ["Python", "Streamlit"],
             link: "https://github.com/rodnm/crypto-monitor",
-            image: "/images/crypto-monitor.png"
+            image: cryptoImg
         },
         {
             title: "Global Rare Earth Trade Analysis",
             description: "Dashboard presenting an analysis of global rare earth trade for the period 1995-2022. The source used is data from the Observatory of Economic Complexity (OEC).",
             tags: ["R", "Power BI"],
             link: "https://github.com/rodnm/proyect_powebi_rare-earth",
-            image: "/images/rare-earth.png"
+            image: rareEarthImg
         },
         {
             title: "BCRP: Exchange Rate",
             description: "Web scraping of data found in the BCRP Statistical Series repository. These data are the Dollar Exchange Rate - Sale series for any year.",
             tags: ["R"],
             link: "https://github.com/rodnm/bcrp-tasa-de-cambio",
-            image: "/images/exchange-rate.png"
+            image: exchangeRateImg
         },
         {
             title: "Rseries",
             description: "This package contains beauty palettes to personalize plots with the style of series from platforms like Netflix, Amazon Prime, or local TV from Latin American Countries.",
             tags: ["R", "Git", "GitHub"],
             link: "https://github.com/diognes/Rseries",
-            image: "/images/rseries.png"
+            image: rseriesImg
         },
         {
             title: "Portfolio V1",
             description: "First version of my personal portfolio using Astro.",
             tags: ["HTML", "Astro", "Tailwind CSS", "TypeScript", "React", "Git", "GitHub"],
             link: "https://github.com/rodnm/portfolio_v1",
-            image: "/images/portfolio-v1.png"
+            image: portfolioImg
         }
     ]
 };
