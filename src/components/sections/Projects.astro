@@ -1,0 +1,37 @@
+---
+import { ExternalLink } from 'lucide-react';
+import ScrollReveal from '../ui/ScrollReveal';
+import ProjectFilters from '../ProjectFilters';
+import type { Project } from '../../config';
+
+interface Props {
+    projects: Project[];
+    isEs: boolean;
+}
+
+const { projects, isEs } = Astro.props;
+const projectsTitle = isEs ? 'Proyectos' : 'Projects';
+const viewProjectText = isEs ? 'Ver Proyecto' : 'View Project';
+---
+
+<ScrollReveal client:load animation="slide-up">
+    <section id="projects" class="py-20 px-4 bg-gray-50 dark:bg-white/5">
+        <div class="max-w-6xl mx-auto">
+            <h2
+                class="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
+            >
+                <ExternalLink className="w-8 h-8 text-[var(--color-secondary)]" />
+                {projectsTitle}
+            </h2>
+
+            <ProjectFilters
+                client:load
+                projects={projects}
+                labels={{
+                    all: isEs ? 'Todos' : 'All',
+                    viewProject: viewProjectText,
+                }}
+            />
+        </div>
+    </section>
+</ScrollReveal>

@@ -1,0 +1,42 @@
+---
+import { Briefcase } from 'lucide-react';
+import ScrollReveal from '../ui/ScrollReveal';
+import type { Experience } from '../../config';
+
+interface Props {
+    experiences: Experience[];
+    isEs: boolean;
+}
+
+const { experiences, isEs } = Astro.props;
+const experienceTitle = isEs ? 'Experiencia' : 'Experience';
+---
+
+<ScrollReveal client:load animation="slide-up">
+    <section id="experience" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2
+                class="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
+            >
+                <Briefcase className="w-8 h-8 text-[var(--color-secondary)]" />
+                {experienceTitle}
+            </h2>
+            <div class="space-y-8">
+                {
+                    experiences.map((exp) => (
+                        <div class="relative pl-8 border-l-2 border-[var(--color-secondary)]">
+                            <div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-[var(--color-secondary)]" />
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                                {exp.title}
+                            </h3>
+                            <span class="text-[var(--color-primary)] dark:text-[var(--color-accent)] font-medium">
+                                {exp.company} | {exp.period}
+                            </span>
+                            <p class="mt-2 text-gray-600 dark:text-gray-300">{exp.description}</p>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+</ScrollReveal>

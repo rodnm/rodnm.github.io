@@ -1,0 +1,44 @@
+---
+import { Cpu } from 'lucide-react';
+import ScrollReveal from '../ui/ScrollReveal';
+import type { SkillCategory } from '../../config';
+
+interface Props {
+    skills: SkillCategory[];
+    isEs: boolean;
+}
+
+const { skills, isEs } = Astro.props;
+const skillsTitle = isEs ? 'Conocimiento Técnico' : 'Technical Skills';
+---
+
+<ScrollReveal client:load animation="slide-up">
+    <section id="skills" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2
+                class="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
+            >
+                <Cpu className="w-8 h-8 text-[var(--color-secondary)]" />
+                {skillsTitle}
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                {
+                    skills.map((category) => (
+                        <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md border border-gray-100 dark:border-gray-700">
+                            <h3 class="text-xl font-bold mb-4 text-[var(--color-primary)] dark:text-[var(--color-accent)]">
+                                {category.category}
+                            </h3>
+                            <div class="flex flex-wrap gap-2">
+                                {category.skills.map((skill) => (
+                                    <span class="px-3 py-1 text-sm rounded-full bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300">
+                                        {skill}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+</ScrollReveal>

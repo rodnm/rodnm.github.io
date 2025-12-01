@@ -1,0 +1,50 @@
+---
+import { GraduationCap } from 'lucide-react';
+import ScrollReveal from '../ui/ScrollReveal';
+import type { Education } from '../../config';
+
+interface Props {
+    education: Education[];
+    isEs: boolean;
+}
+
+const { education, isEs } = Astro.props;
+const educationTitle = isEs ? 'Educación' : 'Education';
+---
+
+<ScrollReveal client:load animation="slide-up">
+    <section id="education" class="py-20 px-4 bg-gray-50 dark:bg-white/5">
+        <div class="max-w-4xl mx-auto">
+            <h2
+                class="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
+            >
+                <GraduationCap className="w-8 h-8 text-[var(--color-secondary)]" />
+                {educationTitle}
+            </h2>
+            <div class="space-y-8">
+                {
+                    education.map((edu) => (
+                        <div class="flex flex-col md:flex-row gap-4 md:gap-8 items-start">
+                            <div class="md:w-1/4">
+                                <span class="text-[var(--color-primary)] dark:text-[var(--color-accent)] font-bold">
+                                    {edu.period}
+                                </span>
+                            </div>
+                            <div class="md:w-3/4">
+                                <h3 class="text-xl font-bold text-gray-900 dark:text-white">
+                                    {edu.institution}
+                                </h3>
+                                <p class="text-lg text-gray-700 dark:text-gray-200">{edu.degree}</p>
+                                {edu.description && (
+                                    <p class="mt-2 text-gray-600 dark:text-gray-300">
+                                        {edu.description}
+                                    </p>
+                                )}
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+</ScrollReveal>

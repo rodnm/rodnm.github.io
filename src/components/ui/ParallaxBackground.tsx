@@ -7,7 +7,7 @@ export default function ParallaxBackground() {
         const handleMouseMove = (e: MouseEvent) => {
             setOffset({
                 x: (e.clientX / window.innerWidth) * 20,
-                y: (e.clientY / window.innerHeight) * 20
+                y: (e.clientY / window.innerHeight) * 20,
             });
         };
 

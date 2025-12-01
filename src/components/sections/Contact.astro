@@ -1,0 +1,76 @@
+---
+import { Mail, Github, Linkedin } from 'lucide-react';
+import ScrollReveal from '../ui/ScrollReveal';
+import ContactForm from '../ContactForm';
+import type { PortfolioData } from '../../config';
+
+interface Props {
+    personalInfo: PortfolioData['personalInfo'];
+    isEs: boolean;
+}
+
+const { personalInfo, isEs } = Astro.props;
+const contactTitle = isEs ? 'Contacto' : 'Contact';
+const contactDesc = isEs
+    ? '¿Tienes un proyecto en mente o simplemente quieres saludar? ¡Envíame un mensaje!'
+    : 'Have a project in mind or just want to say hi? Send me a message!';
+---
+
+<ScrollReveal client:load animation="fade">
+    <section id="contact" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center flex items-center justify-center gap-3">
+                <Mail className="w-8 h-8 text-[var(--color-secondary)]" />
+                {contactTitle}
+            </h2>
+
+            <p class="text-center text-gray-600 dark:text-gray-300 mb-12 max-w-2xl mx-auto">
+                {contactDesc}
+            </p>
+
+            <ContactForm
+                client:load
+                formId="mkgdnvoz"
+                labels={{
+                    name: isEs ? 'Nombre' : 'Name',
+                    email: 'Email',
+                    message: isEs ? 'Mensaje' : 'Message',
+                    send: isEs ? 'Enviar Mensaje' : 'Send Message',
+                    sending: isEs ? 'Enviando...' : 'Sending...',
+                    success: isEs ? '¡Mensaje enviado con éxito!' : 'Message sent successfully!',
+                    error: isEs
+                        ? 'Hubo un error al enviar el mensaje.'
+                        : 'There was an error sending the message.',
+                }}
+            />
+
+            <div class="flex justify-center gap-6 mt-12">
+                <a
+                    href={personalInfo.contact.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-[var(--color-primary)] hover:text-white dark:hover:bg-[var(--color-accent)] dark:hover:text-gray-900 transition-colors"
+                    aria-label="GitHub profile"
+                >
+                    <Github className="w-6 h-6" />
+                </a>
+                <a
+                    href={personalInfo.contact.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-[#0077b5] hover:text-white transition-colors"
+                    aria-label="LinkedIn profile"
+                >
+                    <Linkedin className="w-6 h-6" />
+                </a>
+                <a
+                    href={`mailto:${personalInfo.contact.email}`}
+                    class="p-4 bg-gray-100 dark:bg-gray-800 rounded-full hover:bg-[var(--color-secondary)] hover:text-white transition-colors"
+                    aria-label="Email contact"
+                >
+                    <Mail className="w-6 h-6" />
+                </a>
+            </div>
+        </div>
+    </section>
+</ScrollReveal>

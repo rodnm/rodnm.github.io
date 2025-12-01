@@ -1,0 +1,49 @@
+---
+import ScrollReveal from '../ui/ScrollReveal';
+import ParallaxBackground from '../ui/ParallaxBackground';
+import type { PortfolioData } from '../../config';
+
+interface Props {
+    personalInfo: PortfolioData['personalInfo'];
+    isEs: boolean;
+}
+
+const { personalInfo, isEs } = Astro.props;
+
+const contactText = isEs ? 'Contáctame' : 'Contact Me';
+const cvText = isEs ? 'Descargar CV' : 'Download CV';
+---
+
+<ScrollReveal client:load animation="fade" duration={1000}>
+    <section class="min-h-[90vh] flex items-center justify-center px-4 relative overflow-hidden">
+        <ParallaxBackground client:load />
+
+        <div class="max-w-4xl mx-auto text-center">
+            <h1
+                class="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-[var(--color-primary)] to-[var(--color-secondary)] dark:from-[var(--color-accent)] dark:to-[var(--color-secondary)]"
+            >
+                {isEs ? 'Hola, soy' : "Hi, I'm"}
+                {personalInfo.name}
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+                {personalInfo.description}
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a
+                    href="#contact"
+                    class="px-8 py-3 bg-[var(--color-primary)] text-white rounded-lg hover:bg-opacity-90 transition-all shadow-lg hover:shadow-xl dark:bg-[var(--color-accent)] dark:text-gray-900 font-semibold"
+                >
+                    {contactText}
+                </a>
+                <a
+                    href={personalInfo.cv}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="px-8 py-3 border-2 border-[var(--color-primary)] text-[var(--color-primary)] rounded-lg hover:bg-[var(--color-primary)] hover:text-white transition-all dark:border-[var(--color-accent)] dark:text-[var(--color-accent)] dark:hover:bg-[var(--color-accent)] dark:hover:text-gray-900 font-semibold"
+                >
+                    {cvText}
+                </a>
+            </div>
+        </div>
+    </section>
+</ScrollReveal>

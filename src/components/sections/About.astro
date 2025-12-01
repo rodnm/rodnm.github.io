@@ -1,0 +1,52 @@
+---
+import { Image } from 'astro:assets';
+import { Code } from 'lucide-react';
+import ScrollReveal from '../ui/ScrollReveal';
+import type { PortfolioData } from '../../config';
+
+interface Props {
+    personalInfo: PortfolioData['personalInfo'];
+    isEs: boolean;
+}
+
+const { personalInfo, isEs } = Astro.props;
+const aboutTitle = isEs ? 'Sobre Mí' : 'About Me';
+---
+
+<ScrollReveal client:load animation="slide-up">
+    <section id="about" class="py-20 px-4 bg-gray-50 dark:bg-white/5">
+        <div class="max-w-4xl mx-auto">
+            <h2
+                class="text-3xl md:text-4xl font-bold mb-12 text-center flex items-center justify-center gap-3"
+            >
+                <Code className="w-8 h-8 text-[var(--color-secondary)]" />
+                {aboutTitle}
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div
+                    class="aspect-square rounded-full overflow-hidden bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] p-1"
+                >
+                    <div
+                        class="w-full h-full bg-gray-200 dark:bg-gray-800 rounded-full flex items-center justify-center overflow-hidden"
+                    >
+                        <Image
+                            src={personalInfo.profileImage}
+                            alt={personalInfo.name}
+                            class="w-full h-full object-cover"
+                            width={400}
+                            height={400}
+                            loading="eager"
+                        />
+                    </div>
+                </div>
+                <div>
+                    {
+                        personalInfo.about.map((paragraph) => (
+                            <p class="text-lg text-gray-600 dark:text-gray-300 mb-6">{paragraph}</p>
+                        ))
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+</ScrollReveal>
