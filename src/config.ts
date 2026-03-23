@@ -7,6 +7,7 @@ import rareEarthImg from './assets/images/rare-earth.png';
 import exchangeRateImg from './assets/images/exchange-rate.png';
 import rseriesImg from './assets/images/rseries.png';
 import portfolioImg from './assets/images/portfolio-v1.png';
+import agentFullstackImg from './assets/images/agent-fullstack.png';
 
 export interface Experience {
     title: string;
@@ -100,11 +101,14 @@ export const skills: SkillCategory[] = [
         skills: [
             'Análisis estadístico',
             'Análisis econométrico',
-            'Machine Learning',
             'Power BI',
             'Dashboards',
             'Excel (Macros)',
         ],
+    },
+    {
+        category: 'Ingeniería de IA',
+        skills: ['Machine Learning', 'IA Generativa / LLMs', 'Agentes IA', 'Gradio'],
     },
     {
         category: 'Ingeniería de Datos',
@@ -121,6 +125,14 @@ export const skills: SkillCategory[] = [
 ];
 
 export const projects: Project[] = [
+    {
+        title: 'Full Stack Code Agent',
+        description:
+            'Agente de IA asíncrono en Python que interactúa por chat (Gradio) y programa aplicaciones web de forma autónoma. Emplea modelos fundacionales (Gemini 2.5 Flash) e implementa compresión de contexto en tiempo de ejecución.',
+        tags: ['Python', 'Gradio', 'LLMs', 'React', 'Astro', 'TypeScript'],
+        link: 'https://github.com/rodnm/AgentFullStack',
+        image: agentFullstackImg,
+    },
     {
         title: 'OpenAlex Research Dashboard',
         description:
@@ -223,11 +235,14 @@ export const englishData: PortfolioData = {
             category: 'Data & Analysis',
             skills: [
                 'Statistical/Econometric Analysis',
-                'Machine Learning',
                 'Power BI',
                 'Dashboards',
                 'Excel (Macros)',
             ],
+        },
+        {
+            category: 'AI Engineering',
+            skills: ['Machine Learning', 'Generative AI / LLMs', 'AI Agents', 'Gradio'],
         },
         {
             category: 'Data Engineering',
@@ -243,6 +258,14 @@ export const englishData: PortfolioData = {
         },
     ],
     projects: [
+        {
+            title: 'Full Stack Code Agent',
+            description:
+                'Asynchronous AI agent in Python that interacts via chat (Gradio) and programs web applications autonomously. It uses foundation models (Gemini 2.5 Flash) and implements runtime context compression.',
+            tags: ['Python', 'Gradio', 'LLMs', 'React', 'Astro', 'TypeScript'],
+            link: 'https://github.com/rodnm/AgentFullStack',
+            image: agentFullstackImg,
+        },
         {
             title: 'OpenAlex Research Dashboard',
             description:
