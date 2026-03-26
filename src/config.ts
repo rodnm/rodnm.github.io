@@ -7,7 +7,7 @@ import rareEarthImg from './assets/images/rare-earth.png';
 import exchangeRateImg from './assets/images/exchange-rate.png';
 import rseriesImg from './assets/images/rseries.png';
 import portfolioImg from './assets/images/portfolio-v1.png';
-import agentFullstackImg from './assets/images/agent-fullstack.png';
+import fullStackAgentImg from './assets/images/fullstack-agent.png';
 
 export interface Experience {
     title: string;
@@ -130,8 +130,8 @@ export const projects: Project[] = [
         description:
             'Agente de IA asíncrono en Python que interactúa por chat (Gradio) y programa aplicaciones web de forma autónoma. Emplea modelos fundacionales (Gemini 2.5 Flash) e implementa compresión de contexto en tiempo de ejecución.',
         tags: ['Python', 'Gradio', 'LLMs', 'React', 'Astro', 'TypeScript'],
-        link: 'https://github.com/rodnm/AgentFullStack',
-        image: agentFullstackImg,
+        link: 'https://github.com/rodnm/FullStackAgent',
+        image: fullStackAgentImg,
     },
     {
         title: 'OpenAlex Research Dashboard',
@@ -263,8 +263,8 @@ export const englishData: PortfolioData = {
             description:
                 'Asynchronous AI agent in Python that interacts via chat (Gradio) and programs web applications autonomously. It uses foundation models (Gemini 2.5 Flash) and implements runtime context compression.',
             tags: ['Python', 'Gradio', 'LLMs', 'React', 'Astro', 'TypeScript'],
-            link: 'https://github.com/rodnm/AgentFullStack',
-            image: agentFullstackImg,
+            link: 'https://github.com/rodnm/FullStackAgent',
+            image: fullStackAgentImg,
         },
         {
             title: 'OpenAlex Research Dashboard',
