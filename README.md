@@ -2,7 +2,7 @@
 
 Un portafolio web profesional, diseñado para **Desarrolladores**, **Científicos de Datos** y **Profesionales Técnicos**. Construido con **Astro**, **Tailwind CSS** y **React**, ofrece un rendimiento excepcional y una estética moderna basada en la paleta de colores **Viridis**.
 
-![Portfolio Preview](/public/images/portfolio-v1.png)
+![Portfolio Preview](src/assets/images/portfolio-v1.png)
 
 ## 🚀 Características
 
