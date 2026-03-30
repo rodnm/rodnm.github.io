@@ -3,12 +3,14 @@
 ¡Tu proyecto ya está listo! Sigue estos pasos para subirlo a GitHub.
 
 ## Paso 1: Crear el repositorio en GitHub
+
 1.  Ve a [github.com/new](https://github.com/new).
 2.  Escribe un nombre para tu repositorio (ej: `mi-portafolio`).
 3.  **No** marques ninguna casilla (README, .gitignore, License) porque ya las tenemos.
 4.  Haz clic en **Create repository**.
 
 ## Paso 2: Subir tu código
+
 Copia y pega estos comandos en tu terminal (uno por uno):
 
 ```bash
@@ -30,4 +32,5 @@ git push -u origin main
 ```
 
 ## ¡Listo!
+
 Recarga la página de GitHub y verás tus archivos.

@@ -42,11 +42,11 @@ Todos los comandos se ejecutan desde la raíz del proyecto en la terminal:
 | `npm run test`     | Ejecuta tests unitarios (Vitest)                     |
 | `npm run test:e2e` | Ejecuta tests end-to-end (Playwright)                |
 
-## 🚀 Despliegue
+## 📚 Documentación y Wiki
 
-Para publicar tu portafolio en internet (Netlify, GitHub Pages, Vercel), consulta nuestra guía detallada:
+Toda la ayuda técnica, **guías de despliegue (GitHub Pages)** y la **Wiki con Arquitectura** detallada del proyecto han sido consolidadas en el directorio `docs/`.
 
-👉 **[Guía de Despliegue (DEPLOY.md)](DEPLOY.md)**
+👉 **[Leer la Documentación Completa](./docs/00-Indice.md)**
 
 ## ⚙️ Personalización
 
